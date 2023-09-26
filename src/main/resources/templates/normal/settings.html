@@ -1,0 +1,39 @@
+<html xmlns:th="http:/www.thymeleaf.org" th:replace="/normal/user_base::layout(~{::section})">
+	<head>
+		<title>Settings</title>
+	</head>
+
+	<body>
+		<section>
+			<div class="text-center text-success" th:text="${success}" th:if="${success}"></div>
+			<div class="text-center text-danger" th:text="${failure}" th:if="${failure}"></div>
+			<div class="card mx-3">
+			
+				<div class="card-body">
+				
+				<form action="#" th:action="@{/user/process-password}" method="post">
+					<h6 class="mt-4">Current Password</h6>
+					<input name="currentPassword" type="password" class="form-control" placeholder="enter current password here">
+					
+					<h6 class="mt-4">New Password</h6>
+					<input name="newPassword" type="password" class="form-control" placeholder="enter new password here">
+				
+					<div class="text-center mt-3">
+						<button type="submit" class="btn btn-primary mx-3">Submit</button>
+						<button type="reset" class="btn btn-warning mx-3">Reset</button>
+					</div>
+					<div class="text-center"></div>
+				</form>
+				</div>
+				
+			</div>
+			
+					
+			<script>
+				$("#settings").addClass("active-sidebar");
+			</script>
+			
+		</section>
+	</body>
+
+</html>

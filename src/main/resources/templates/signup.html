@@ -1,0 +1,73 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+	<section>
+		<div class="containter">
+			<div class="row">
+			
+				<div class="col-md-8 offset-md-2">
+					
+					<div class="my-card">
+					
+					<!-- 	<div th:if="${session.message}" class="alert" th:classappend="${session.message.type}" role="alert">
+						  <p th:text="${session.message.content}"></p>
+						  <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+						</div>
+					 -->
+					
+						<h1 class="text-center">Register Here!!</h1>
+												
+						<form th:action="@{/register}" method="post" th:object="${user}">
+						  <div class="mb-3">
+						    <label for="username" class="form-label">User Name</label>
+						    <input name="name" type="text" class="form-control" id="userName" aria-describedby="NameHelp" th:value="${user.name}" 
+						    th:classappend="${#fields.hasErrors('name')? 'is-invalid':''}"
+						    >
+						    
+						    <div class="invalid-feedback" th:each="e: ${#fields.errors('name')}" th:text="${e}"></div>
+						    
+						    <div id="nameHelp" class="form-text">Please type your full name</div>
+						  </div>
+						  <div class="mb-3">
+						    <label for="exampleInputEmail1" class="form-label">Email address</label>
+						    <input name="mail" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" th:value="${user.mail}"
+						    th:classappend="${#fields.hasErrors('mail')? 'is-invalid':''}">
+						    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+						    
+						    <div class="invalid-feedback" th:each="e: ${#fields.errors('mail')}" th:text="${e}"></div>
+						    
+						  </div>
+						  <div class="mb-3">
+						    <label for="exampleInputPassword1" class="form-label">Password</label>
+						    <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+						  </div>
+						  <div class="mb-3">
+						    <textarea name="about" rows="7" cols="" placeholder="share something about yourself" class="form-control" th:value="${user.about}"></textarea>
+						  </div>
+						  
+						  <div class="mb-3 form-check">
+						    <input name="agreement" type="checkbox" class="form-check-input" id="agreement">
+						    <label class="form-check-label" for="agreement">Terms & Conditions</label>
+						  </div>
+						  
+						  <div class="text-center">
+							  <button type="submit" class="btn bg-primary">Submit</button>
+							  <button type="reset" class="btn bg-warning">Reset</button>
+						  </div>
+						</form>
+						
+					</div>
+				
+				</div>
+			</div>
+		
+		</div>	
+	</section>
+	
+</body>
+
+</html>

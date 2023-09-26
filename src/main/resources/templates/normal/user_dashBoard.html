@@ -1,0 +1,34 @@
+<html xmlns:th="http:/www.thymeleaf.org" th:replace="/normal/user_base::layout(~{::section})">
+	<head>
+		<title>User DashBoard Page</title>
+	</head>
+
+	<body>
+		<section>
+			
+					<div class="text-center">
+						<img class="single_profile_picture mt-3" alt="" src="" th:src="@{'/image/'+contactLogo.png}"/>
+						<h1 class="mt-4 fst-italic fw-light text-success">Access your Contacts from Anywhere now</h1>
+						<div class="d-grid mt-5 me-3">
+							<a th:href="@{/user/add_contact}" class="btn btn-primary text-uppercase ">Add New Contact</a>
+						</div>
+					</div>
+					
+					<div class="text-center fst-italic fw-light mt-5 mx-5">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+					dolore magna aliqua. Nunc scelerisque viverra mauris in aliquam sem. Quis eleifend quam adipiscing vitae 
+					proin sagittis nisl. Pretium nibh ipsum consequat nisl. Mi eget mauris pharetra et ultrices neque ornare. 
+					Volutpat maecenas volutpat blandit aliquam etiam. Volutpat consequat mauris nunc congue. Egestas fringilla 
+					phasellus faucibus scelerisque eleifend donec. Dictumst quisque sagittis purus sit amet volutpat consequat 
+					mauris nunc. Ullamcorper sit amet risus nullam eget felis. Massa sapien faucibus et molestie. Tellus mauris 
+					a diam maecenas sed enim ut sem.</p>
+					</div>
+					
+			<script>
+				$("#home").addClass("active-sidebar");
+			</script>
+			
+		</section>
+	</body>
+
+</html>

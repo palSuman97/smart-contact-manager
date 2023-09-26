@@ -1,0 +1,117 @@
+body{
+	background: #e2e2e2!important;
+}
+
+.bg-primary{
+	background: #009688!important;
+}
+
+.banner{
+	width: 100%;
+	height: 93vh;
+	background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)) ,url("../image/banner.jpg");
+	background-size: cover;
+	color: white;
+}
+
+.my-card {
+	padding: 20px;
+	background-color: #FFFFFF;
+}
+
+@media only screen and (max-width: 600px) {
+	.sidebar {
+		display: none;
+		width: 80% !important;
+		background: white;
+		height: 100vh;
+		position: fixed;
+		padding-top: 20px;
+	}
+	.content {
+		margin-left: 0% !important;
+	}
+}
+
+.sidebar {
+	width: 20%;
+	background: white;
+	height: 100%;
+	position: fixed;
+	padding: 45px;
+	z-index: 9999999999999;
+}
+
+.sidebar a {
+	display: block;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: white;
+}
+
+.sidebar a:hover {
+	background: gray;
+}
+
+.sidebar .divider {
+	height: .5px;
+	width: 100%;
+	background: gray;
+	margin-top: 20px;
+}
+
+.sidebar .crossBtn {
+	position: absolute;
+	top: 0px;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+.content {
+	margin-left: 22%;
+}
+
+.content i {
+	cursor: pointer;
+}
+
+.profile_picture {
+	width: 35px;
+	height: 35px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.single_profile_picture {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.search-container {
+	position: relative;
+}
+
+.search-result {
+	position: absolute;
+	background: white;
+	padding: 10px;
+	width: 92%;
+	border: 1px solid yellow;
+	display: none; 
+}
+
+.active-sidebar {
+	background: gray;
+}
+
+input::placeholder{
+	font-style: italic;
+	color: gray !important;
+}
+
+
+
+

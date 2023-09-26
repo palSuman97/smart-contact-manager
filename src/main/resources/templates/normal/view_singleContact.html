@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org" th:replace="/normal/user_base::layout(~{::section})">
+   <head>
+      <title>View Contact</title>
+   </head>
+   <body>
+      <section>
+         <div class="card me-3 ms-3" th:if="${contact}">
+            <div class="card-body">
+               <div class="container text-center">
+                  <img class="single_profile_picture" alt="" src="" th:src="@{'/image/'+${contact.image}}"/>
+                  <h3 class="mt-3"><span th:text="${contact.name}"></span>( <span th:text="${contact.nickName}"></span> )</h3>
+               </div>
+               <div class="container">
+                  <hr>
+                  <div class="row">
+                     <div class="offset-md-4 col-md-3">
+                        <h5>Contact Id :</h5>
+                     </div>
+                     <div class="col-md-3">
+                        <span th:text="${contact.cid}"></span>
+                     </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                     <div class="offset-md-4 col-md-3">
+                        <h5>Email : </h5>
+                     </div>
+                     <div class="col-md-3">
+                        <span th:text="${contact.mail}"></span>
+                     </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                     <div class="offset-md-4 col-md-3">
+                        <h5>Mobile Number :</h5>
+                     </div>
+                     <div class="col-md-3">
+                        <span th:text="${contact.phone}"></span>
+                     </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                     <div class="offset-md-4 col-md-3">
+                        <h5>Profession : </h5>
+                     </div>
+                     <div class="col-md-3">
+                        <span th:text="${contact.work}"></span>
+                     </div>
+                  </div>
+               </div>
+               <hr>
+               <div class="text-center">
+                  <span th:utext="${contact.description}"></span>
+               </div>
+               <div class="row">
+                  <div class="col-md-1">
+                     <a class="btn btn-primary  " >BACK</a> 
+                  </div>
+                  <div class="offset-md-9 col-md-1">
+                     <a class="btn btn-secondary " >UPDATE</a>
+                  </div>
+                  <div class="col-md-1">
+                     <a th:href="@{'/user/delete_contact/'+${contact.cid}}" class="btn btn-danger " >DELETE</a> 
+                  </div>
+               </div>
+            </div>
+         </div>
+         <h2  th:unless="${contact}" class="text-center text-danger">You are not Authorized to View this Contact</h2>
+      </section>
+   </body>
+</html>
